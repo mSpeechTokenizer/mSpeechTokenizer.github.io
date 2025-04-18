@@ -73,7 +73,7 @@
     </div>
     <p></p>
     <h2 class="wrapper">2 Voice conversion experiments</h2>
-    <p class="wrapper">In this section we provide audio samples used for evaluation in Section 4.2. Note that they serve only the purpose of showing speaker independence of the first content RVQ layer.</p>
+    <p class="wrapper">In this section we provide audio samples used for evaluation in Section 4.2. Here we wanted to demonstrate speaker independence of the first content RVQ layer. We additionally fine-tuned decoder and the global encoder, and reconstruction was made only with the first RVQ layer. During this fine-tuning most of the timbre information should be learned by the global encoder, and it could be possible to perform voice conversion by extracting vectors γ and β by the global encoder from some reference speech utterance different from the source utterance used to extract content tokens z1.</p>
 
     <!-- <ul  class="wrapper">
             <li><b><i>PitchFlow</i></b> - the model with pitch guidance</li>
@@ -84,14 +84,14 @@
     </div>
 
     <h2 class="wrapper">3 Ablation study: layer normalization before RVQ</h2>
-    <p class="wrapper"> In this section we present samples verifying that adding layer normalization before RVQ module is crucial for the first RVQ layer to contain sufficient information about the linguistic content.</p>
+    <p class="wrapper">In this section we present samples verifying that adding layer normalization before RVQ module is crucial for the first RVQ layer to contain sufficient information about the linguistic content.</p>
 
     <div class="wrapper" style="text-align: center;">
         <div class='ablation_study_layer_norm_replace'></div>
     </div>
 
     <h2 class="wrapper">4 Ablation study: separate vs shared semantic projections</h2>
-    <p class="wrapper"> We also experimented with mSpeechTokenizer variant with a single semantic projection matrix shared between all 10 languages. Evaluation of tese samples indicate that the content preservation is better for the mSpeechTokenizer with different semantic projections.</p>
+    <p class="wrapper"> We also experimented with mSpeechTokenizer variant with a single semantic projection matrix shared between all 10 languages. Evaluation of these samples indicate that the content preservation is better for the mSpeechTokenizer with different semantic projections.</p>
 
     <div class="wrapper" style="text-align: center;">
         <div class='ablation_study_projection_replace'></div>
