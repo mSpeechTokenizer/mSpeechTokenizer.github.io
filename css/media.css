@@ -1,0 +1,11 @@
+audio {
+    margin: auto;
+    width: 230px;
+    min-width: 50px;
+    display: flex;
+    padding: 5px;
+}
+
+.smaller_audio audio {
+    width: 180px;
+}

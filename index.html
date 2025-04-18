@@ -1,0 +1,112 @@
+<html>
+<!-- HEADER -->
+<head>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+    <title>Demo page of "Methods of efficient speech tokenization with multilingual semantic distillation"</title>
+    <!-- <link rel="icon" href="resources/img/icon.png"> -->
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/select.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap"
+          rel="stylesheet">
+</head>
+
+<!-- MAIN BODY -->
+<body>
+<div class="main">
+    <!-- HEADER -->
+    <br>
+    <h1 class="wrapper">Methods of efficient speech tokenization with multilingual semantic distillation</h1>
+    <p class="wrapper"><i><b>Anonymous submission</b></i></p>
+
+
+    <!-- ABSTRACT -->
+    <h2 class="wrapper">Abstract</h2>
+    <p class="wrapper">Recent advances in large foundation models have shown that the concept of multi-modal large language models (LLMs) is feasible meaning that AI–human interaction can undergo qualitative changes in the nearest future. In particular, such LLMs start to show good results in both speech understanding and generation. However, to be able to communicate with human in a multitude of languages, speech tokens corresponding to many different languages have to be incorporated into a multi-modal LLM seamlessly in a unified manner. In this paper we study applicability of one of quite popular techniques of obtaining speech tokens, namely training a neural codec with semantic distillation, to multilingual setup. Starting from vanilla SpeechTokenizer codec, we develop several architectural changes allowing for better handling of multiple languages with semantic distillation from mHuBERT-147 hidden representations while improving efficiency at the same time. We validate our approach through extensive objective evaluation and ablation studies and show its potential for substantially multilingual speech tokenization.</p>
+    <p></p>
+
+    
+    <!-- 2 MOS AUDIO SAMPLES -->
+    <h2 class="wrapper">1 Reconstruction</h2>
+    <p class="wrapper">In this section we provide audio samples used for the first experiment in Section 4.1 of the paper. Here we compare reconstruction results of the baseline SpeechTokenizer model and our proposed model for 10 languages. reconstruction is represented in two ways: "full" reconstruction from all 8 RVQ layers and "neutral" from  only the first content RVQ layer.</p>
+    <ul  class="wrapper">
+        <li><b><i>Baseline</i></b> - SpeechTokenizer model</li>
+        <li><b><i>Ours</i></b> - proposed mSpeechTokenizer</li>
+    </ul>
+    <div class="wrapper" style="text-align: center;">
+        <span class="choose"><b>Select language:</b></span>
+
+        <div class="dropdown">
+            <div class="select">
+                <span>English; Chinese; German</span>
+                <i class="fa fa-chevron-left"></i>
+            </div>
+            <input type="hidden">
+            <!-- <ul class="dropdown-menu reconstruction">
+                <li id="English">English</li>
+                <li id="Chinese">Chinese</li>
+                <li id="German">German</li>
+                <li id="Russian">Russian</li>
+                <li id="Spanish">Spanish</li>
+                <li id="French">French</li>
+                <li id="Italian">Italian</li>
+                <li id="Dutch">Dutch</li>
+                <li id="Portuguese">Portuguese</li>
+                <li id="Polish">Polish</li>
+            </ul> -->
+            <ul class="dropdown-menu reconstruction">
+                <li id="en_zh_de">English; Chinese; German</li>
+                <li id="ru_it_fr">Russian; Italian; French</li>
+                <li id="es_pl_pt_nl">Spanish; Polish; Portuguese; Dutch</li>
+            </ul>
+        </div>
+        <div class="reconstrunction">
+            <div class='reconstrunction_replace'></div>
+        </div>
+
+    </div>
+    <p></p>
+    <h2 class="wrapper">2 Voice conversion experiments</h2>
+    <p class="wrapper">In this section we provide audio samples used for evaluation in Section 4.2. Note that they serve only the purpose of showing speaker independence of the first content RVQ layer.</p>
+
+    <!-- <ul  class="wrapper">
+            <li><b><i>PitchFlow</i></b> - the model with pitch guidance</li>
+            <li><b><i>PitchFlow + SV</i></b> - PitchFlow with speaker verification model for additional pitch shifting</li>
+    </ul> -->
+    <div class="wrapper" style="text-align: center;">
+        <div class='conversion_replace'></div>
+    </div>
+
+    <h2 class="wrapper">3 Ablation study: layer normalization before RVQ</h2>
+    <p class="wrapper"> In this section we present samples verifying that adding layer normalization before RVQ module is crucial for the first RVQ layer to contain sufficient information about the linguistic content.</p>
+
+    <div class="wrapper" style="text-align: center;">
+        <div class='ablation_study_layer_norm_replace'></div>
+    </div>
+
+    <h2 class="wrapper">4 Ablation study: separate vs shared semantic projections</h2>
+    <p class="wrapper"> We also experimented with mSpeechTokenizer variant with a single semantic projection matrix shared between all 10 languages. Evaluation of tese samples indicate that the content preservation is better for the mSpeechTokenizer with different semantic projections.</p>
+
+    <div class="wrapper" style="text-align: center;">
+        <div class='ablation_study_projection_replace'></div>
+    </div>
+
+
+    </div>
+
+    <br><br><br>
+    <p class="wrapper" style="text-align: center; font-weight: 300;">April 2025</p>
+    <br><br><br>
+
+    <script language="JavaScript" type="text/javascript" src="js/tables_content.js"></script>
+</div>
+
+
+</body>
+</html>
